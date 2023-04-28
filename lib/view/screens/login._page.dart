@@ -110,8 +110,12 @@ class _LoginScreenState extends State<LoginScreen>
                 ),
                 SizedBox(height: size.height * 0.05),
                 const CustomTextFormField(
-                  hintText: 'Email',
-                ),
+                    hintText: 'Email',
+                    hintStyle: TextStyle(color: Colors.white)),
+                SizedBox(height: size.height * 0.05),
+                const CustomTextFormField(
+                    hintText: 'Password',
+                    hintStyle: TextStyle(color: Colors.white)),
               ],
             ),
           )

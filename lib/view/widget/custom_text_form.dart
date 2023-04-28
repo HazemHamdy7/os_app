@@ -1,24 +1,33 @@
 import 'package:flutter/material.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField({super.key, required this.hintText, this.color});
+  const CustomTextFormField(
+      {super.key,
+      required this.hintText,
+      this.color,
+      this.fontSize,
+      this.hintStyle});
   final String hintText;
   final Color? color;
+  final double? fontSize;
+  final TextStyle? hintStyle;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       style: const TextStyle(color: Colors.white),
       decoration: InputDecoration(
-          hintText: 'Email',
-          hintStyle: const TextStyle(color: Colors.white),
-          enabledBorder: lineBorder(),
-          focusedBorder: lineBorder()),
+        hintText: hintText,
+        hintStyle: hintStyle,
+        enabledBorder: lineBorder(color),
+        focusedBorder: lineBorder(color),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(50)),
+      ),
     );
   }
 
-  UnderlineInputBorder lineBorder(Color color) {
+  UnderlineInputBorder lineBorder(Color? color) {
     return UnderlineInputBorder(
-      borderSide: BorderSide(color: Colors.pink.shade700),
-    );
+        borderSide: const BorderSide(color: Colors.white),
+        borderRadius: BorderRadius.circular(20));
   }
 }
